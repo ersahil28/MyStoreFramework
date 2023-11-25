@@ -15,11 +15,11 @@ public class AddressPage extends BaseClass {
 
 
     public AddressPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     public ShippingPage clickOnCheckout() {
-        action.click(driver,proceedToCheckout);
+        action.click(getDriver(),proceedToCheckout);
         return new ShippingPage();
     }
 

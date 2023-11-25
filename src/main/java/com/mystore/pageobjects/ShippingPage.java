@@ -18,15 +18,15 @@ public class ShippingPage extends BaseClass {
 
 
     public ShippingPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     public void checkTheTerms() {
-        action.click(driver,terms);
+        action.click(getDriver(),terms);
     }
 
     public PaymentPage clickOnProceedToCheckout() {
-        action.click(driver,proceedToCheckout);
+        action.click(getDriver(),proceedToCheckout);
         return new PaymentPage();
     }
 

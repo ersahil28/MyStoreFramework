@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.mystore.utility.ListenerClass"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/MyStoreProject/src/test/java/com/mystore/testcases">
+        <parameter name="browser" value="Chrome"></parameter>
+
+        <classes>
+            <class name="com.mystore.testcases.AccountCreationPageTest">
+                <methods>
+                    <include name="verifyCreateAccountPageTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.AddToCartPageTest">
+                <methods>
+                    <include name="addToCartTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.EndToEndTest">
+                <methods>
+                    <include name="endToEndTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.HomePageTest">
+                <methods>
+                    <include name="orderHistoryAndDetailsTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.IndexPageTest">
+                <methods>
+                    <include name="verifyLogo"/>
+                    <include name="verifyTitle"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.LoginPageTest">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.OrderPageTest">
+                <methods>
+                    <include name="verifyTotalPrice"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.SearchResultPageTest">
+                <methods>
+                    <include name="productAvailabilityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

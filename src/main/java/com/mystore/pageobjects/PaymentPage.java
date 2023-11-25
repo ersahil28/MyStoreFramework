@@ -18,11 +18,11 @@ public class PaymentPage extends BaseClass {
 
 
     public PaymentPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     public OrderSummary clickOnPaymentMethod() {
-        action.click(driver,bankWireMethod);
+        action.click(getDriver(),bankWireMethod);
         return new OrderSummary();
     }
 

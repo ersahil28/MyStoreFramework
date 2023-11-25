@@ -13,7 +13,7 @@ public class LoginPage extends BaseClass {
     @FindBy(xpath="//input[@id='email']")
     WebElement username;
 
-    @FindBy(xpath = "passwd")
+    @FindBy(xpath = "//input[@id='passwd']")
     WebElement password;
 
     @FindBy(xpath = "//span[normalize-space()='Sign in']")
@@ -27,25 +27,26 @@ public class LoginPage extends BaseClass {
 
 
     public LoginPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
-    public AddressPage login(String uname, String pswd) {
+    public AddressPage login1(String uname, String pswd) {
         action.type(username,uname);
         action.type(password,pswd);
-        action.click(driver,signInBtn);
+        action.click(getDriver(),signInBtn);
         return new AddressPage();
     }
 
-    public HomePage login1(String uname, String pswd) {
+    public HomePage login(String uname, String pswd) {
         action.type(username,uname);
         action.type(password,pswd);
-        action.click(driver,signInBtn);
+        action.click(getDriver(),signInBtn);
         return new HomePage();
     }
 
     public AccountCreationPage createNewAccount(String newEmail) {
         action.type(emailForNewAccount,newEmail);
+        action.click(getDriver(),createNewAccountBtn);
         return new AccountCreationPage();
     }
 

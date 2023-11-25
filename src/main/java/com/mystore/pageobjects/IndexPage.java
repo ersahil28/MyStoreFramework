@@ -23,26 +23,26 @@ public class IndexPage extends BaseClass {
     WebElement searchButton;
 
     public IndexPage() {
-        PageFactory.initElements(driver,this); // this means initialize all page objects here in page
+        PageFactory.initElements(getDriver(),this); // this means initialize all page objects here in page
     }
 
     public LoginPage clickOnSignIn() {
-        action.click(driver,signInBtn);
+        action.click(getDriver(),signInBtn);
         return new LoginPage();
     }
 
     public boolean validateLogo() {
-        return action.isDisplayed(driver,logoMyShop);
+        return action.isDisplayed(getDriver(),logoMyShop);
     }
 
     public String getMyStoreTitle() {
-        String myStoreTitle = driver.getTitle();
+        String myStoreTitle = getDriver().getTitle();
         return myStoreTitle;
     }
 
     public SearchResultPage searchProduct(String productName) {
         action.type(searchProductBox, productName);
-        action.click(driver,searchButton);
+        action.click(getDriver(),searchButton);
         return new SearchResultPage();
     }
 

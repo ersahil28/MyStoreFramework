@@ -20,25 +20,28 @@ public class OrderPage extends BaseClass {
     WebElement proceedToCheckout;
 
     public OrderPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     public double getUnitPrice() {
+
       String unitPrice1 = unitPrice.getText();
       String unit = unitPrice1.replaceAll("[^a-zA-Z0-9]","");
       double finalUnitPrice = Double.parseDouble(unit);
-      return finalUnitPrice/100;
+      //return finalUnitPrice/100;
+        return finalUnitPrice;
     }
 
     public double getTotalPrice() {
-        String unitPrice1 = unitPrice.getText();
+        String unitPrice1 = totalPrice.getText();
         String tot = unitPrice1.replaceAll("[^a-zA-Z0-9]","");
         double finalTotalPrice = Double.parseDouble(tot);
-        return finalTotalPrice/100;
+        //return finalTotalPrice/100;
+        return finalTotalPrice;
     }
 
     public LoginPage clickOnCheckout() {
-        action.click(driver, proceedToCheckout);
+        action.click(getDriver(), proceedToCheckout);
         return new LoginPage();
     }
 

@@ -16,11 +16,11 @@ public class OrderSummary extends BaseClass {
 
 
     public OrderSummary() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
     public OrderConfirmationPage clickOnConfirmButton() {
-        action.click(driver,confirmOrderBtn);
+        action.click(getDriver(),confirmOrderBtn);
         return new OrderConfirmationPage();
     }
 

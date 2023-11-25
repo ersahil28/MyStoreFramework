@@ -14,11 +14,17 @@ public class HomePage extends BaseClass {
     WebElement orderHistory;
 
     public HomePage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(getDriver(),this);
     }
 
-    public void validateOrderHistory() {
-        action.isDisplayed(driver,orderHistory);
+    public boolean validateOrderHistory() {
+        return action.isDisplayed(getDriver(),orderHistory);
+
+    }
+
+    public String getCurrentUrl() {
+        String homePageUrl = getDriver().getCurrentUrl();
+        return homePageUrl;
 
     }
 
